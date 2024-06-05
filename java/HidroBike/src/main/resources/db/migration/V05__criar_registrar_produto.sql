@@ -1,0 +1,14 @@
+CREATE TABLE PRODUTO (
+    CODIGO INTEGER NOT NULL PRIMARY KEY auto_increment,
+    NOME VARCHAR(50),
+    DESCRICAO VARCHAR(50),
+    codigo_categoria bigint(20) not null,
+    PRECO NUMERIC(10,2),
+    ESTOQUE INTEGER,
+    IMAGEURL VARCHAR(100),
+    CONSTRAINT FK_PRODUTO_CATEGORIA FOREIGN KEY (codigo_categoria)
+    REFERENCES categoria(codigo));
+    
+    ALTER TABLE PRODUTO ADD COLUMN IMAGE_URL VARCHAR(100);
+
+INSERT INTO PRODUTO (NOME,DESCRICAO,codigo_categoria,PRECO,ESTOQUE,IMAGEURL) VALUES ("AZEITE","EXTRA VIRGEM",1,20.00,2,"https://pixabay.com/pt/photos/azeite-de-oliva-azeitonas-comida-968657/");
